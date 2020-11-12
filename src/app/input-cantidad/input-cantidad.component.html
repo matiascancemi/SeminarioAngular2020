@@ -1,0 +1,5 @@
+<button type="button" class="btn btn-primary" (click)="Restar()">-</button>
+<input type="number" [(ngModel)]="cantidad" (ngModelChange)="Multiplicacion()">
+<button type="button" class="btn btn-primary" (click)="Sumar()">+</button>
+
+<h3 *ngIf="multiplicacion">Total de Compra: {{multiplicacion}}</h3>
