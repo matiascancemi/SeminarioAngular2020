@@ -17,7 +17,7 @@ export class InputCantidadComponent implements OnInit {
   valor: number;
 
   @Output()
-  CambiarCantidad: EventEmitter<number> = new EventEmitter<number>();
+  cantidadChange: EventEmitter<number> = new EventEmitter<number>();
 
   @Output()
   multiplicacion: number;
@@ -29,14 +29,14 @@ export class InputCantidadComponent implements OnInit {
   Restar() :void{
     if (this.cantidad > 0){
       this.cantidad--;
-      this.CambiarCantidad.emit(this.cantidad);
+      this.cantidadChange.emit(this.cantidad);
       this.Multiplicacion();
       }
   }
 
   Sumar() :void{
     this.cantidad++;
-    this.CambiarCantidad.emit(this.cantidad);
+    this.cantidadChange.emit(this.cantidad);
     this.Multiplicacion();
   }  
 
