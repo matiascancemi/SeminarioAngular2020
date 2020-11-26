@@ -16,11 +16,14 @@ export class InputCantidadComponent implements OnInit {
   @Input() 
   valor: number;
 
+  @Input() 
+  multiplicacion: number;
+
   @Output()
   cantidadChange: EventEmitter<number> = new EventEmitter<number>();
 
   @Output()
-  multiplicacion: number;
+  multiplicacionChange: EventEmitter<number> = new EventEmitter<number>();
 
 
   ngOnInit(): void {
@@ -41,7 +44,7 @@ export class InputCantidadComponent implements OnInit {
   }  
 
   Multiplicacion() :void{
-    this.multiplicacion = this.cantidad * this.valor;
-  }    
+    this.multiplicacionChange.emit(this.cantidad * this.valor);
+  }
 
 }
