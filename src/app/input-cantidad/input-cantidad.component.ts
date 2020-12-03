@@ -45,6 +45,7 @@ export class InputCantidadComponent implements OnInit {
 
   Multiplicacion() :void{
     this.multiplicacionChange.emit(this.cantidad * this.valor);
+    this.cantidadChange.emit(this.cantidad);
   }
 
 }
